@@ -14,10 +14,7 @@
     "vscode": "^1.77.0"
   },
   "license": "MIT",
-  "categories": [
-    "Other"
-  ],
-  "license": "SEE LICENSE IN LICENSE.txt",
+  "tags": ["javascript", "react", "react-native", "typescript", "generator", "react components"],
   "icon": "assets/logo.jpg",
   "activationEvents": [],
   "main": "./out/extension.js",
