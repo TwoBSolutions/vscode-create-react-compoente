@@ -9,7 +9,7 @@
     "type": "git",
     "url": "git+https://github.com/jeandrorc/vscode-create-react-compoente"
   },
-  "version": "0.0.2",
+  "version": "0.0.3",
   "engines": {
     "vscode": "^1.77.0"
   },
@@ -35,11 +35,11 @@
       "explorer/context": [
         {
           "command": "createreactcomponent",
-          "when": "resourceDir"
+          "when": "explorerResourceIsFolder"
         },
         {
           "command": "createmidsreactcomponent",
-          "when": "resourceDir"
+          "when": "explorerResourceIsFolder"
         }
       ]
     }
