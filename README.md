@@ -20,8 +20,26 @@ Para instalar a extensão Create React Component, siga os passos abaixo:
 
 A extensão será instalada e ativada automaticamente.
 
+## Como usar (Contexto)
 
-## Como usar
+Esta extensão adiciona as seguintes opções ao menu de contexto do botão direito do mouse no painel de arquivos do Visual Studio Code:
+
+1. **Create React Component**: Cria um novo componente React na estrutura de pastas.
+2. **Create Mids Component**: Cria um novo componente Mids na estrutura de pastas.
+
+### Create React Component
+
+Para criar um novo componente React, clique com o botão direito do mouse na pasta onde você deseja que o novo componente seja criado. Selecione a opção "Create React Component" no menu de contexto.
+
+![Create React Component GIF](assets/react-component-use.webp)
+
+### Create Mids Component
+
+Para criar um novo componente Mids, clique com o botão direito do mouse na pasta onde você deseja que o novo componente seja criado. Selecione a opção "Create Mids Component" no menu de contexto.
+
+![Create Mids Component GIF](assets/mids-use.webp)
+
+## Como usar (Comando)
 
 1. Instale a extensão no Visual Studio Code.
 2. Abra a paleta de comandos (`Ctrl+Shift+P` ou `Cmd+Shift+P` no macOS) e digite "Create React Component".

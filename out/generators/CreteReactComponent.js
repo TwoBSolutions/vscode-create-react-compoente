@@ -3,34 +3,14 @@ Object.defineProperty(exports, "__esModule", { value: true });
 const vscode = require("vscode");
 const fs = require("fs");
 const path = require("path");
-function generateComponentTemplate(componentName, isReactNative) {
-    const importStatement = isReactNative
-        ? "import { View, Text } from 'react-native';"
-        : "import React from 'react';";
-    const componentTemplate = `
-${importStatement}
-
-const ${componentName} = () => {
-  return (
-    <View>
-      <Text>${componentName}</Text>
-    </View>
-  );
-};
-
-export default ${componentName};
-`;
-    return componentTemplate;
-}
-function generateStyledTemplate() {
-    const styledTemplate = `// Adicione seus estilos aqui\n`;
-    return styledTemplate;
-}
+const ReactStyled_1 = require("./templates/ReactStyled");
+const ReactComponentTemplate_1 = require("./templates/ReactComponentTemplate");
+const string_1 = require("../utils/string");
 const createReactComponent = (context) => {
     const disposable = vscode.commands.registerCommand("createreactcomponent", async (uri) => {
-        const componentName = await vscode.window.showInputBox({
+        const componentName = (0, string_1.toCamelCase)(await vscode.window.showInputBox({
             prompt: "Nome do componente",
-        });
+        }));
         if (!componentName) {
             return;
         }
@@ -77,11 +57,11 @@ const createReactComponent = (context) => {
                 fs.mkdirSync(componentDir);
             }
             // Criação do arquivo Component.extensao
-            const componentTemplate = generateComponentTemplate(componentName, componentType === "React Native");
+            const componentTemplate = (0, ReactComponentTemplate_1.generateComponentTemplate)(componentName, componentType === "React Native");
             const componentPath = path.join(componentDir, `${componentName}.${fileType}`);
             fs.writeFileSync(componentPath, componentTemplate);
             // Criação do arquivo component.styled.extensao
-            const styledTemplate = generateStyledTemplate();
+            const styledTemplate = (0, ReactStyled_1.generateStyledTemplate)(componentType === "React Native");
             const styledPath = path.join(componentDir, `${componentName.toLowerCase()}.styled.${fileType === "tsx" ? "ts" : fileType}`);
             fs.writeFileSync(styledPath, styledTemplate);
             // Criação do arquivo index.extensao

@@ -1,47 +1,20 @@
 import * as vscode from "vscode";
 import * as fs from "fs";
 import * as path from "path";
-
-
-function generateComponentTemplate(
-  componentName: string,
-  isReactNative: boolean
-): string {
-  const importStatement = isReactNative
-    ? "import { View, Text } from 'react-native';"
-    : "import React from 'react';";
-  const componentTemplate = `
-${importStatement}
-
-const ${componentName} = () => {
-  return (
-    <View>
-      <Text>${componentName}</Text>
-    </View>
-  );
-};
-
-export default ${componentName};
-`;
-
-  return componentTemplate;
-}
-
-function generateStyledTemplate(): string {
-  const styledTemplate = `// Adicione seus estilos aqui\n`;
-
-  return styledTemplate;
-}
-
+import { generateStyledTemplate } from "./templates/ReactStyled";
+import { generateComponentTemplate } from "./templates/ReactComponentTemplate";
+import { toCamelCase } from "../utils/string";
 
 const createReactComponent = (context: vscode.ExtensionContext) => {
     const disposable = vscode.commands.registerCommand(
         "createreactcomponent",
         async (uri: vscode.Uri) => {
           
-          const componentName = await vscode.window.showInputBox({
-            prompt: "Nome do componente",
-          });
+          const componentName = toCamelCase(
+            await vscode.window.showInputBox({
+              prompt: "Nome do componente",
+            })
+          );
           if (!componentName) {
             return;
           }
@@ -110,7 +83,7 @@ const createReactComponent = (context: vscode.ExtensionContext) => {
             fs.writeFileSync(componentPath, componentTemplate);
     
             // Criação do arquivo component.styled.extensao
-            const styledTemplate = generateStyledTemplate();
+            const styledTemplate = generateStyledTemplate(componentType === "React Native");
             const styledPath = path.join(
               componentDir,
               `${componentName.toLowerCase()}.styled.${

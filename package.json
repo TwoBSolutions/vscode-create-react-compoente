@@ -2,14 +2,14 @@
   "name": "createreactcomponent2b",
   "displayName": "CreateReactComponent",
   "publisher": "2bsolutions",
-  "categories":["React", "React Native", "Component Generators"],
+  "categories":["Programming Languages", "Snippets", "Other"],
   "description": "Cria um componente React ou React Native estruturado",
   "preview": true,
   "repository": {
     "type": "git",
     "url": "git+https://github.com/jeandrorc/vscode-create-react-compoente"
   },
-  "version": "0.0.3",
+  "version": "0.0.4",
   "engines": {
     "vscode": "^1.77.0"
   },
