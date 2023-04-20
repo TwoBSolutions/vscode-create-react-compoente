@@ -8,6 +8,19 @@ Esta extensão para Visual Studio Code simplifica a criação de componentes Rea
 - Suporta arquivos TypeScript (`.tsx`) e JavaScript (`.js` e `.jsx`)
 - Gera automaticamente arquivos separados para o componente principal, estilos e exportação
 
+## Como instalar
+
+Para instalar a extensão Create React Component, siga os passos abaixo:
+
+1. Baixe a última release da extensão em [LINK_PARA_A_ULTIMA_RELEASE](https://github.com/jeandrorc/vscode-create-react-compoente/releases/latest).
+2. No Visual Studio Code, vá para a aba "Extensions" (ou pressione `Ctrl+Shift+X` no Windows/Linux ou `Cmd+Shift+X` no macOS).
+3. Clique no ícone de reticências (...) no canto superior direito da aba "Extensions".
+4. Selecione "Install from VSIX..." no menu suspenso.
+5. Navegue até o arquivo `.vsix` baixado no passo 1 e clique em "Open" (ou "Abrir").
+
+A extensão será instalada e ativada automaticamente.
+
+
 ## Como usar
 
 1. Instale a extensão no Visual Studio Code.
