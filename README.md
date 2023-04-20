@@ -12,7 +12,7 @@ Esta extensão para Visual Studio Code simplifica a criação de componentes Rea
 
 Para instalar a extensão Create React Component, siga os passos abaixo:
 
-1. Baixe a última release da extensão em [LINK_PARA_A_ULTIMA_RELEASE](https://github.com/jeandrorc/vscode-create-react-compoente/releases/latest).
+1. Baixe a última release da extensão em [DOWNLOAD](https://github.com/jeandrorc/vscode-create-react-compoente/releases/latest).
 2. No Visual Studio Code, vá para a aba "Extensions" (ou pressione `Ctrl+Shift+X` no Windows/Linux ou `Cmd+Shift+X` no macOS).
 3. Clique no ícone de reticências (...) no canto superior direito da aba "Extensions".
 4. Selecione "Install from VSIX..." no menu suspenso.
