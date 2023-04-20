@@ -2,6 +2,10 @@
   "name": "createreactcomponent",
   "displayName": "CreateReactComponent",
   "description": "Cria um componente React ou React Native extruturado",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jeandrorc/vscode-create-react-compoente"
+  },
   "version": "0.0.1",
   "engines": {
     "vscode": "^1.77.0"
@@ -11,7 +15,6 @@
     "Other"
   ],
   "activationEvents": [
-    "onCommand:createreactcomponent"
   ],
   "main": "./out/extension.js",
   "contributes": {
@@ -20,7 +23,15 @@
         "command": "createreactcomponent",
         "title": "Create React Component"
       }
-    ]
+    ],
+    "menus": {
+      "explorer/context": [
+        {
+          "command": "createreactcomponent",
+          "when": "resourceLangId == javascript && resourceDir"
+        }
+      ]
+    }
   },
   "scripts": {
     "vscode:prepublish": "yarn run compile",
